@@ -78,6 +78,18 @@ Progression.TradableBindsOnPickup.Enforced = 1
 Progression.DungeonFinder.Enforced = 1
 
 #
+#    Progression.Achievements.Enforced
+#        Description: Enforce achievements based on the active phase
+#                     Disabling this will allow players to unlock achievements before phase 13
+#                     Note: There is no reliable way to recheck achievements after turning this on,
+#                           however the ".achievement checkall" command can restore some of them.
+#                     0 - Disabled
+#        Default:     1 - Enabled
+#
+
+Progression.Achievements.Enforced = 1
+
+#
 #    Progression.Multiplier.Damage
 #        Description: Set the multiplier for damage done by players in phases prior to 13
 #        Default:     0.6

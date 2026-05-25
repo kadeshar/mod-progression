@@ -72,6 +72,8 @@ void Progression::OnAfterConfigLoad(bool reload)
     uint8 PhaseId = sProgressionMgr->GetPhaseId();
     uint8 AuraId = sProgressionMgr->GetAuraId();
 
+    sProgressionMgr->SetEnforceAchievements(sConfigMgr->GetOption<bool>("Progression.Achievements.Enforced", true));
+
     if (PhaseId < 6)
     {
         LOG_INFO("server.loading", ">> Disabled weather");
