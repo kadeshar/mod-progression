@@ -24,6 +24,7 @@ public:
     bool OnPlayerReputationChange(Player* /*player*/, uint32 /*factionID*/, int32& /*standing*/, bool /*incremental*/) override;
     void OnPlayerQuestComputeXP(Player* player, Quest const* /*quest*/, uint32& /*xpValue*/) override;
     void OnPlayerGiveXP(Player* /*player*/, uint32& /*amount*/, Unit* /*victim*/, uint8 /*xpSource*/) override;
+    bool OnPlayerBeforeAchievementComplete(Player* /*player*/, AchievementEntry const* /*achievement*/) override;
 
     // UnitScript
     void ModifyPeriodicDamageAurasTick(Unit* /*target*/, Unit* /*attacker*/, uint32& /*damage*/, SpellInfo const* /*spellInfo*/) override;
@@ -54,6 +55,8 @@ public:
     void SetHealingMultiplier(float value) { healingMultiplier = value; }
     void SetResetDatabase(bool value) { resetDatabase = value; }
     bool GetResetDatabase() { return resetDatabase; }
+    void SetEnforceAchievements(bool value) { enforceAchievements = value; }
+    bool GetEnforceAchievements() const { return enforceAchievements; }
 
 private:
     uint8 phaseId;
@@ -61,6 +64,7 @@ private:
     float damageMultiplier;
     float healingMultiplier;
     bool resetDatabase;
+    bool enforceAchievements = true;
 };
 
 #define sProgressionMgr ProgressionMgr::instance()

@@ -2,6 +2,14 @@
 
 #include "mod_progression.h"
 
+bool Progression::OnPlayerBeforeAchievementComplete(Player* /*player*/, AchievementEntry const* /*achievement*/)
+{
+    if (sProgressionMgr->GetPhaseId() < 13 && sProgressionMgr->GetEnforceAchievements())
+        return false;
+
+    return true;
+}
+
 void Progression::OnPlayerUpdateArea(Player* player, uint32 /*oldArea*/, uint32 newArea)
 {
     if (player->IsGameMaster())
