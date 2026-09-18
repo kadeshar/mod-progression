@@ -1,0 +1,1 @@
+UPDATE `creature_template` SET `DamageModifier` = 50 WHERE `entry` = 12397; -- Lord Kazzak

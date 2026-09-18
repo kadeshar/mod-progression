@@ -1,0 +1,1 @@
+UPDATE `quest_template` SET `RewardTitle` = 0 WHERE `ID` = 8743; -- Bang a Gong!
